@@ -3,6 +3,7 @@ import { BrowserRouter as Router, NavLink, Route, Switch } from "react-router-do
 import './App.css';
 import { DaftarPasien } from './screens/DaftarPasien';
 import { DaftarDokter } from './screens/DaftarDokter';
+import { AddBilling } from './screens/AddBilling';
 import { Home } from './screens/Home';
 import { NotFound } from './screens/NotFound';
 import { UpdatePasien } from './screens/UpdatePasien';
@@ -14,7 +15,7 @@ export class App extends React.Component {
 				<div className="App">
 					<nav className="navbar navbar-expand-sm navbar-dark bg-dark">
 						<NavLink to="#" className="navbar-brand">
-							<img src="/favicon.ico" alt="#" width="30" height="30"/>
+							<img src="/favicon.ico" alt="#" width="30" height="30"/>	
 						</NavLink>
 						<div className="collapse navbar-collapse">
 							<ul className="navbar-nav mr-auto">
@@ -36,6 +37,7 @@ export class App extends React.Component {
 							<Route path="/" exact component={Home} />
 							<Route path="/all-pasien" exact component={DaftarPasien} />
 							<Route path="/update-pasien/:id" exact component={UpdatePasien} />
+							<Route path="/add-billing/:id" exact component={AddBilling} />
 							<Route path="/not-found" exact component={NotFound} />
 							<Route path="/all-dokter" exact component={DaftarDokter} />
 							<Route component={NotFound} />

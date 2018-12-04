@@ -7,11 +7,9 @@ export const Appointment = {
 		method: 'GET'
 	})
 	.then(response => {
-		console.log(response)
 		return response.json()
 	})
 	.then(jsonResponse => {
-		console.log(jsonResponse)
 		return jsonResponse
 	})
 	},
@@ -57,5 +55,20 @@ return fetch(`${cors}${baseUrl}/1/updatePasien`,{
 			return jsonResponse
 		})
 },
+	addBilling(requestBody) {
+		 return fetch(`${cors}${baseUrl}/1/addBilling`,{
+		 	method: 'POST',
+		 	headers:{
+		 		'Content-Type': 'application/json'
+		 	},
+		 	body: JSON.stringify(requestBody)
+		 })
+		.then (response => {
+			return response.json()
+		})
+		.then (jsonResponse => {
+			return jsonResponse
+		})
+}
 	
 }
